@@ -7,28 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Club\Detail.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.32" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.32" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.32">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Club\Detail.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Views\Club\Detail.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\Club\Detail.cshtml" />
   </ItemGroup>
 
 </Project>

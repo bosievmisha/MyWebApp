@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RunGroup.Data;
 using RunGroup.Models;
 
@@ -20,7 +21,7 @@ namespace RunGroup.Controllers
 
         public IActionResult Detail(int id)
         {
-            Club club = this.context.Clubs.FirstOrDefault(c => c.Id == id);
+            Club club = this.context.Clubs.Include(a => a.Address).FirstOrDefault(c => c.Id == id);
             return View(club);
         }
     }
