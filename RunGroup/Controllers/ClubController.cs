@@ -17,5 +17,11 @@ namespace RunGroup.Controllers
             List<Club> clubs = this.context.Clubs.ToList();
             return View(clubs);
         }
+
+        public IActionResult Detail(int id)
+        {
+            Club club = this.context.Clubs.FirstOrDefault(c => c.Id == id);
+            return View(club);
+        }
     }
 }
