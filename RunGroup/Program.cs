@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using RunGroup.Data;
+using RunGroup.Interfaces;
+using RunGroup.Models;
+using RunGroup.Repository;
 
 namespace RunGroup
 {
@@ -11,6 +14,8 @@ namespace RunGroup
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IRepository<Club>, ClubRepository>();
+            builder.Services.AddScoped<IRepository<Race>, RaceRepository>();
             builder.Services.AddDbContext<ApplicationDbContext>(options => 
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
