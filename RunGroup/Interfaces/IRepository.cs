@@ -1,4 +1,4 @@
-﻿namespace RunGroup.Repository
+﻿namespace RunGroup.Interfaces
 {
     public interface IRepository<T> where T : class
     {

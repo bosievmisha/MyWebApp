@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using RunGroup.Data;
 using RunGroup.Interfaces;
 using RunGroup.Models;
-using RunGroup.Repository;
 
 namespace RunGroup.Controllers
 {

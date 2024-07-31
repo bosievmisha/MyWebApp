@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using RunGroup.Data;
+using RunGroup.Helpers;
 using RunGroup.Interfaces;
 using RunGroup.Models;
 using RunGroup.Repository;
+using RunGroup.Services;
 
 namespace RunGroup
 {
@@ -16,10 +18,13 @@ namespace RunGroup
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IRepository<Club>, ClubRepository>();
             builder.Services.AddScoped<IRepository<Race>, RaceRepository>();
+            builder.Services.AddScoped<IPhotoService, PhotoService>();
+            builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
             builder.Services.AddDbContext<ApplicationDbContext>(options => 
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+            
             var app = builder.Build();
 
             if(args.Length == 1 && args[0].ToLower() == "seeddata")
