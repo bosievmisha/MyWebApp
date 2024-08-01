@@ -1,6 +1,18 @@
-﻿@model IEnumerable<Club> 
+﻿@model IEnumerable<Club>
+
 
 <div class="album py-5 bg-body-tertiary">
+    <nav b-nmh3vltveg class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div b-nmh3vltveg class="container-fluid">
+            <div b-nmh3vltveg class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul b-nmh3vltveg class="navbar-nav flex-grow-1">
+                    <li b-nmh3vltveg class="nav-item">
+                        <a class="nav-link text-dark" href="/Club/Create">Create</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             @foreach (var item in Model)
