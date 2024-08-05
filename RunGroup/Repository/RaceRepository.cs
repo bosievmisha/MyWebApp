@@ -50,5 +50,10 @@ namespace RunGroup.Repository
         {
             return await this.context.Races.Where(c => c.Address.City.Contains(city)).ToListAsync();
         }
+
+        public async Task<Race> GetByIdAsyncNoTracking(int id)
+        {
+            return await this.context.Races.Include(c => c.Address).AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
+        }
     }
 }
